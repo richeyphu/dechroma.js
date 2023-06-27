@@ -28,12 +28,12 @@
  * dechroma(frame, [0, 100], [170, 255], [0, 110]);
  * ```
  */
-const dechroma = (
+function dechroma(
   frame: ImageData,
   r: [number, number] = [0, 0],
   g: [number, number] = [0, 255],
   b: [number, number] = [0, 0]
-): void => {
+): void {
   for (let i = 0; i < frame.data.length; i += 4) {
     // Get the pixel's RGB values
     const red = frame.data[i];
@@ -53,7 +53,7 @@ const dechroma = (
       frame.data[i + 3] = 0;
     }
   }
-};
+}
 
 export { dechroma };
 export default dechroma;
