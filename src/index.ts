@@ -5,7 +5,7 @@
  */
 
 /**
- * A utility library for chroma keying canvas video.
+ * A utility library for chroma keying canvas-manipulated video.
  * @packageDocumentation
  */
 

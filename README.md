@@ -1,6 +1,6 @@
 # dechroma.js
 
-Chroma keyer (e.g., green screen) for HTML canvas [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData).
+Chroma key compositing (e.g., green screen) for HTML canvas-manipulated video, using [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData).
 
 ## Install
 

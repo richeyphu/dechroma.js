@@ -1,7 +1,7 @@
 {
   "name": "dechroma",
   "version": "0.1.0",
-  "description": "Chroma keyer for HTML canvas video",
+  "description": "Chroma keying for canvas-manipulated video",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -22,6 +22,7 @@
     "chroma",
     "keying",
     "chromakey",
+    "effect",
     "remove",
     "green",
     "screen",
