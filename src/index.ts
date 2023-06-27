@@ -9,15 +9,19 @@
  * @packageDocumentation
  */
 
+import { type ChromaKeyRange } from './types';
+
 /**
  * Removes a range of RGB values from a frame.
  *
  * @param {ImageData} frame - The frame to be processed.
- * @param {number[]} r - The range of red values to be removed.
- * @param {number[]} g - The range of green values to be removed.
- * @param {number[]} b - The range of blue values to be removed.
+ * @param {ChromaKeyRange} r - The range of red values to be removed.
+ * @param {ChromaKeyRange} g - The range of green values to be removed.
+ * @param {ChromaKeyRange} b - The range of blue values to be removed.
  *
  * @returns {void}
+ *
+ * @throws {RangeError} ChromaKeyRange: index[0] must not be greater than index[1]
  *
  * @example Here's a simple example:
  * ```js
@@ -30,10 +34,17 @@
  */
 function dechroma(
   frame: ImageData,
-  r: [number, number] = [0, 0],
-  g: [number, number] = [0, 255],
-  b: [number, number] = [0, 0]
+  r: ChromaKeyRange = [0, 0],
+  g: ChromaKeyRange = [0, 255],
+  b: ChromaKeyRange = [0, 0]
 ): void {
+  // Check if the range is valid
+  if (r[0] > r[1] || g[0] > g[1] || b[0] > b[1]) {
+    throw new RangeError(
+      'ChromaKeyRange: index[0] must not be greater than index[1]'
+    );
+  }
+
   for (let i = 0; i < frame.data.length; i += 4) {
     // Get the pixel's RGB values
     const red = frame.data[i];
