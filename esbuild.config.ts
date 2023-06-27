@@ -1,41 +1,41 @@
 import * as esbuild from 'esbuild';
+import { type BuildOptions } from 'esbuild';
 
-await esbuild.build({
+const options: BuildOptions = {
   entryPoints: ['src/index.ts'],
   bundle: true,
-  minify: true,
   sourcemap: true,
-  format: "cjs",
   target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
-  outfile: 'dist/index.min.js',
-});
+};
 
+// CommonJS
 await esbuild.build({
-  entryPoints: ['src/index.ts'],
-  bundle: true,
+  ...options,
   minify: false,
-  sourcemap: true,
-  format: "cjs",
-  target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
+  format: 'cjs',
   outfile: 'dist/index.js',
 });
 
+// CommonJS (minified)
 await esbuild.build({
-  entryPoints: ['src/index.ts'],
-  bundle: true,
+  ...options,
   minify: true,
-  sourcemap: true,
-  format: "esm",
-  target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
+  format: 'cjs',
   outfile: 'dist/index.min.js',
 });
 
+// ES Module
 await esbuild.build({
-  entryPoints: ['src/index.ts'],
-  bundle: true,
+  ...options,
   minify: false,
-  sourcemap: true,
-  format: "esm",
-  target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
-  outfile: 'dist/index.js',
+  format: 'esm',
+  outfile: 'dist/index.mjs',
+});
+
+// ES Module (minified)
+await esbuild.build({
+  ...options,
+  minify: true,
+  format: 'esm',
+  outfile: 'dist/index.min.mjs',
 });
