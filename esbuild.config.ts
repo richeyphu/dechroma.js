@@ -1,16 +1,22 @@
 import * as esbuild from 'esbuild';
 import { type BuildOptions } from 'esbuild';
 
-const options: BuildOptions = {
+const baseOptions: BuildOptions = {
   entryPoints: ['src/index.ts'],
   bundle: true,
   sourcemap: true,
   target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
 };
 
+const minifyOptions: BuildOptions = {
+  minifyWhitespace: true,
+  minifySyntax: true,
+  minifyIdentifiers: false,
+};
+
 // CommonJS
 await esbuild.build({
-  ...options,
+  ...baseOptions,
   minify: false,
   format: 'cjs',
   outfile: 'dist/index.js',
@@ -18,15 +24,15 @@ await esbuild.build({
 
 // CommonJS (minified)
 await esbuild.build({
-  ...options,
-  minify: true,
+  ...baseOptions,
+  ...minifyOptions,
   format: 'cjs',
   outfile: 'dist/index.min.js',
 });
 
 // ES Module
 await esbuild.build({
-  ...options,
+  ...baseOptions,
   minify: false,
   format: 'esm',
   outfile: 'dist/index.mjs',
@@ -34,8 +40,8 @@ await esbuild.build({
 
 // ES Module (minified)
 await esbuild.build({
-  ...options,
-  minify: true,
+  ...baseOptions,
+  ...minifyOptions,
   format: 'esm',
   outfile: 'dist/index.min.mjs',
 });
