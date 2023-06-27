@@ -1,7 +1,7 @@
 {
   "name": "dechroma",
   "version": "0.1.0",
-  "description": "Chroma keyer for canvas video",
+  "description": "Chroma keyer for HTML canvas video",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -13,9 +13,22 @@
     "bundle": "ts-node --esm ./esbuild.config.ts",
     "declaration": "tsc --project tsconfig.json",
     "lint": "eslint src --ext .ts",
-    "prettier": "npx prettier --write ./src/**/*.{ts,js,json,css,scss,md}"
+    "prettier": "npx prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
+    "prepublishOnly": "pnpm build"
   },
-  "keywords": [],
+  "homepage": "https://github.com/richeyphu/dechroma.js#readme",
+  "repository": "github:richeyphu/dechroma.js",
+  "keywords": [
+    "chroma",
+    "keying",
+    "chromakey",
+    "remove",
+    "green",
+    "screen",
+    "html",
+    "canvas",
+    "video"
+  ],
   "author": "phuritd",
   "license": "MIT",
   "devDependencies": {
