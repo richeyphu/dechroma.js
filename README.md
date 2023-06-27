@@ -1,5 +1,10 @@
 # dechroma.js
 
+[![NPM version](https://img.shields.io/npm/v/dechroma.svg)](https://www.npmjs.com/package/dechroma)
+[![NPM total downloads](https://img.shields.io/npm/dt/dechroma)](https://npmjs.org/package/dechroma)
+[![install size](https://packagephobia.com/badge?p=dechroma)](https://packagephobia.com/result?p=dechroma)
+[![minified size](https://img.shields.io/bundlephobia/min/dechroma)](https://bundlephobia.com/package/dechroma)
+
 Chroma key compositing (e.g., green screen) for HTML canvas-manipulated video, using [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData).
 
 ## Install
