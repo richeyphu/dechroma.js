@@ -15,9 +15,9 @@ import { type ChromaKeyRange } from './types';
  * Removes a range of RGB values from a frame.
  *
  * @param {ImageData} frame - The frame to be processed.
- * @param {ChromaKeyRange} r - The range of red values to be removed.
- * @param {ChromaKeyRange} g - The range of green values to be removed.
- * @param {ChromaKeyRange} b - The range of blue values to be removed.
+ * @param {ChromaKeyRange} r - The range of red values to be removed in the format of [min, max].
+ * @param {ChromaKeyRange} g - The range of green values to be removed in the format of [min, max].
+ * @param {ChromaKeyRange} b - The range of blue values to be removed in the format of [min, max].
  *
  * @returns {void}
  *
