@@ -9,7 +9,8 @@
   "scripts": {
     "build": "pnpm clean && pnpm declaration && pnpm bundle",
     "clean": "rimraf dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "bundle": "node --loader ts-node/esm ./esbuild.config.ts",
     "declaration": "tsc --project tsconfig.json",
     "lint": "eslint src --ext .ts",
@@ -40,7 +41,8 @@
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
   },
   "files": [
     "dist/**/*"
