@@ -14,7 +14,7 @@
     "bundle": "node --loader ts-node/esm ./esbuild.config.ts",
     "declaration": "tsc --project tsconfig.json",
     "lint": "eslint src --ext .ts",
-    "prettier": "npx prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
+    "prettier": "prettier --write ./src/**/*.{ts,js,json,css,scss,md}",
     "prepublishOnly": "pnpm build"
   },
   "homepage": "https://github.com/richeyphu/dechroma.js#readme",
